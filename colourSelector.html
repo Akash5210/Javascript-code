@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>colour selector</title>
+
+    <style>
+        .parent{
+            margin-top: 30px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            height: 120px;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <button class="box red" id="red">1</button>
+        <button class="box green" id="green">2</button>
+        <button class="box yellow" id="yellow">3</button>
+    </div>
+    <p id="result"></p>
+
+
+    <script>
+        let red = document.getElementById('red');
+        let green = document.getElementById('green');
+        let yellow = document.getElementById('yellow');
+
+        let result = document.getElementById('result');
+        let resultData = {red:0, green:0, yellow:0};
+
+        red.addEventListener("click", ()=>{
+            //resultData.red++;
+            result.innerText = `you click red ${++resultData.red} times`;
+        });
+        green.addEventListener("click", ()=>{
+            result.innerText = `you click green ${++resultData.green} times`;
+        });
+        yellow.addEventListener("click", ()=>{
+            result.innerText = `you click yellow ${++resultData.yellow} times`;
+        });
+    </script>
+</body>
+</html>
